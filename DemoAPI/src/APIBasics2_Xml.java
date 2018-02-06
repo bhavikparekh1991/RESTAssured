@@ -19,7 +19,7 @@ public class APIBasics2_Xml {
 	@Test
 	public void postData() throws IOException
 	{
-		String xmlPostdata = GenerateStringFromResource(System.getProperty("user.dir") + "//src//files//postdata.xml");
+		String xmlPostdata = GenerateStringFromResource(System.getProperty("user.dir") + "//src//files//Body_Payload_XML.xml");
 		RestAssured.baseURI="https://maps.googleapis.com";
 		
 		Response resp = given().

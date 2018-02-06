@@ -3,24 +3,44 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import files.Resources;
 import files.ReusableMethods;
 
 public class Twitter_GET {
 	
-	String Consumer_Key = "wsiduE05VZqukp0NxRC5K3Fns";
+/*	String Consumer_Key = "wsiduE05VZqukp0NxRC5K3Fns";
 	String Consumer_Secret = "RcDSijYUyrb4uCs6ly35tktGtqfcmzUnZWJcZ6lsS26mqH5tev";
 	String Token = "145893875-6rq21NW0gRNqDn35K5q4L2HrVNdKlCKWHCr1zcNR";
-	String Token_Secret = "SK0kN8Q8RaLgkrkeL1jWw9NWHccDmzmEI4AiEttlnDlMW";
+	String Token_Secret = "SK0kN8Q8RaLgkrkeL1jWw9NWHccDmzmEI4AiEttlnDlMW";*/
 	String TweetCreated;
+	
+	Properties Repository = new Properties();
+	
+	@BeforeTest
+	public void loadPropertiesFile() throws IOException
+	{
+		File f = new File(System.getProperty("user.dir") + "//src//files//env.properties");
+		FileInputStream FI = new FileInputStream(f);
+		Repository.load(FI);
+	}
+	
 	@Test
 	public void Create_Tweet() 
 	{
-		RestAssured.baseURI="https://api.twitter.com/1.1/statuses";
-		Response res= given().auth().oauth(Consumer_Key, Consumer_Secret, Token, Token_Secret).
+		RestAssured.baseURI=Repository.getProperty("T_HOST");
+		Response res= given().auth().oauth(Repository.getProperty("Consumer_Key"), Repository.getProperty("Consumer_Secret"), Repository.getProperty("Token"), Repository.getProperty("Token_Secret")).
 		queryParam("status", "from REST API Automation").
-		when().post("/update.json").then().assertThat().statusCode(200).and().
-	       contentType(ContentType.JSON).extract().response();
+		when().post(Resources.Create_Tweet()).then().assertThat().statusCode(200).and().
+	    contentType(ContentType.JSON).extract().response();
 		
 		
 		//System.out.println(response);
@@ -35,10 +55,10 @@ public class Twitter_GET {
 	@Test(priority = 2,dependsOnMethods = { "Create_Tweet" })
 	public void Get_Tweets() 
 	{
-		RestAssured.baseURI="https://api.twitter.com/1.1/statuses";
-		Response res= given().auth().oauth(Consumer_Key, Consumer_Secret, Token, Token_Secret).
+		RestAssured.baseURI=Repository.getProperty("T_HOST");
+		Response res= given().auth().oauth(Repository.getProperty("Consumer_Key"), Repository.getProperty("Consumer_Secret"), Repository.getProperty("Token"), Repository.getProperty("Token_Secret")).
 		queryParam("count", "3").
-		when().get("/user_timeline.json").then().assertThat().statusCode(200).and().
+		when().get(Resources.Get_Tweets()).then().assertThat().statusCode(200).and().
 	       contentType(ContentType.JSON).extract().response();
 		
 		
@@ -57,9 +77,9 @@ public class Twitter_GET {
 	public void Delete_Tweet() 
 	{
 	
-		RestAssured.baseURI="https://api.twitter.com/1.1/statuses";
-		Response res= given().auth().oauth(Consumer_Key, Consumer_Secret, Token, Token_Secret).
-		when().post("/destroy/"+TweetCreated+".json").then().assertThat().statusCode(200).and().
+		RestAssured.baseURI=Repository.getProperty("T_HOST");
+		Response res= given().auth().oauth(Repository.getProperty("Consumer_Key"), Repository.getProperty("Consumer_Secret"), Repository.getProperty("Token"), Repository.getProperty("Token_Secret")).
+		when().post(Resources.Delete_Tweet(TweetCreated)).then().assertThat().statusCode(200).and().
 	    contentType(ContentType.JSON).extract().response();
 		
 		

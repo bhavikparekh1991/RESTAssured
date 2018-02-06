@@ -37,7 +37,7 @@ public class APIBasics3 {
 		queryParam("key", Repository.getProperty("KEY")).
 		body(Body_Payload_Json.get_PostBody()).
 		when().
-		post(Resources.placePostData()).
+		post(Resources.G_placePostData()).
 		then().assertThat().statusCode(200).and().contentType(ContentType.JSON).and().
 		body("status",equalTo("OK")).
 		extract().response();
@@ -52,7 +52,7 @@ public class APIBasics3 {
 		Response DeleterawRes =given().queryParam("key", Repository.getProperty("KEY")).
 		body(Body_Payload_Json.get_DeleteBody(place)).
 		when().
-		post(Resources.deletePostedData()).
+		post(Resources.G_deletePostedData()).
 		then().assertThat().statusCode(200).and().contentType(ContentType.JSON).and().
 		body("status",equalTo("OK")).
 		extract().response();
