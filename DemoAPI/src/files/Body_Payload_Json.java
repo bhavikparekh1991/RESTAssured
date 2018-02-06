@@ -1,6 +1,6 @@
 package files;
 
-public class body_payload {
+public class Body_Payload_Json {
 	public static String get_PostBody()
 	{
 		String body = "{"

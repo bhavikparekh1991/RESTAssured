@@ -31,13 +31,13 @@ public class APIBasics4 {
 		       contentType(ContentType.JSON).and().
 		       body("results[0].name",equalTo("Sydney")).and().
 		       body("results[0].place_id",equalTo("ChIJP3Sa8ziYEmsRUKgyFmh9AQM")).and().
-		       header("Server", "pablo").log().all().extract().response();
+		       header("Server", "scaffolding on HTTPServer2").log().ifValidationFails().extract().response();
 		JsonPath js = ReusableMethods.rawToJson(res);
 		int count = js.get("results.size");
 		System.out.println(count);
 		for(int i=0; i<count; i++)
 		{
-			System.out.println(js.get("results["+i+"].name").toString());
+			System.out.println(js.getString("results["+i+"].name"));
 		}
 		/*header("key","value").
 		cookie("value").
