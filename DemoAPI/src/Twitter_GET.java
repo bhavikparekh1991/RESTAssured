@@ -33,7 +33,7 @@ public class Twitter_GET {
 		Repository.load(FI);
 	}
 	
-	@Test
+	@Test()
 	public void Create_Tweet() 
 	{
 		RestAssured.baseURI=Repository.getProperty("T_HOST");
@@ -42,13 +42,10 @@ public class Twitter_GET {
 		when().post(Resources.Create_Tweet()).then().assertThat().statusCode(200).and().
 	    contentType(ContentType.JSON).extract().response();
 		
-		
-		//System.out.println(response);
 		JsonPath js = ReusableMethods.rawToJson(res);
-		//System.out.println(js.get("text").toString());
-		//System.out.println(js.get("id").toString());
+		
 		TweetCreated = js.get("id").toString();
-		System.out.println("Tweets After Adding");
+		System.out.println("--------------Tweets After Adding------------------");
 		
 	}
 	
@@ -59,13 +56,11 @@ public class Twitter_GET {
 		Response res= given().auth().oauth(Repository.getProperty("Consumer_Key"), Repository.getProperty("Consumer_Secret"), Repository.getProperty("Token"), Repository.getProperty("Token_Secret")).
 		queryParam("count", "3").
 		when().get(Resources.Get_Tweets()).then().assertThat().statusCode(200).and().
-	       contentType(ContentType.JSON).extract().response();
+		contentType(ContentType.JSON).extract().response();
 		
-		
-		//System.out.println(response);
 		JsonPath js = ReusableMethods.rawToJson(res);
 		int count =js.get("text.size");
-		System.out.println(count);
+
 		for(int i=0; i<count; i++)
 		{
 			System.out.println(js.getString("text["+i+"]"));
@@ -82,14 +77,11 @@ public class Twitter_GET {
 		when().post(Resources.Delete_Tweet(TweetCreated)).then().assertThat().statusCode(200).and().
 	    contentType(ContentType.JSON).extract().response();
 		
-		
-		//System.out.println(response);
 		JsonPath js = ReusableMethods.rawToJson(res);
-		System.out.println(js.get("text").toString());
-		System.out.println(js.get("truncated").toString());
-		System.out.println("Tweets After deleting");
+		System.out.println("Deleted tweet is - " + js.get("text").toString());
+		System.out.println("Truncated status is - " + js.get("truncated").toString());
+		System.out.println("--------------Tweets After Deleting------------------");
 		Get_Tweets();
-		
 	}
 
 }

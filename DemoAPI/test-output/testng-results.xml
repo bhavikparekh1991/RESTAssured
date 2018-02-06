@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="3580" started-at="2018-02-06T08:02:47Z" finished-at="2018-02-06T08:02:51Z">
+  <suite name="Default suite" duration-ms="4618" started-at="2018-02-06T12:15:02Z" finished-at="2018-02-06T12:15:06Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="3580" started-at="2018-02-06T08:02:47Z" finished-at="2018-02-06T08:02:51Z">
-      <class name="APIBasics">
-        <test-method status="FAIL" signature="test1()[pri:0, instance:APIBasics@604ed9f0]" name="test1" duration-ms="3548" started-at="2018-02-06T13:32:47Z" finished-at="2018-02-06T13:32:51Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[1 expectation failed.JSON path results[0].name doesn't match.Expected: Sydneyt  Actual: Sydney]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: 1 expectation failed.JSON path results[0].name doesn't match.Expected: Sydneyt  Actual: Sydneyat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)at java.lang.reflect.Constructor.newInstance(Unknown Source)at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:83)at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:77)at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:60)at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:235)at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:247)at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:471)at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:643)at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)at java.lang.reflect.Method.invoke(Unknown Source)at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:210)at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:59)at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:52)at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:154)at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)at io.restassured.internal.ResponseSpecificationImpl.content(ResponseSpecificationImpl.groovy:265)at io.restassured.specification.ResponseSpecification$content$1.callCurrent(Unknown Source)at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:52)at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:154)at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:190)at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:248)at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:268)at APIBasics.test1(APIBasics.java:30)at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)at java.lang.reflect.Method.invoke(Unknown Source)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+    <test name="Default test" duration-ms="4618" started-at="2018-02-06T12:15:02Z" finished-at="2018-02-06T12:15:06Z">
+      <class name="Twitter_GET">
+        <test-method status="PASS" signature="loadPropertiesFile()[pri:0, instance:Twitter_GET@57baeedf]" name="loadPropertiesFile" is-config="true" duration-ms="16" started-at="2018-02-06T17:45:02Z" finished-at="2018-02-06T17:45:02Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test1 -->
-      </class> <!-- APIBasics -->
+        </test-method> <!-- loadPropertiesFile -->
+        <test-method status="PASS" signature="Create_Tweet()[pri:0, instance:Twitter_GET@57baeedf]" name="Create_Tweet" duration-ms="2897" started-at="2018-02-06T17:45:02Z" finished-at="2018-02-06T17:45:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Create_Tweet -->
+        <test-method status="PASS" signature="Get_Tweets()[pri:2, instance:Twitter_GET@57baeedf]" name="Get_Tweets" duration-ms="629" started-at="2018-02-06T17:45:04Z" depends-on-methods="Twitter_GET.Create_Tweet" finished-at="2018-02-06T17:45:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Get_Tweets -->
+        <test-method status="PASS" signature="Delete_Tweet()[pri:3, instance:Twitter_GET@57baeedf]" name="Delete_Tweet" duration-ms="1046" started-at="2018-02-06T17:45:05Z" depends-on-methods="Twitter_GET.Get_Tweets" finished-at="2018-02-06T17:45:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Delete_Tweet -->
+      </class> <!-- Twitter_GET -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
