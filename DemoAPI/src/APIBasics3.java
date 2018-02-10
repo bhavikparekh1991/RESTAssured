@@ -24,6 +24,7 @@ public class APIBasics3 {
 		File f = new File(System.getProperty("user.dir") + "//src//files//env.properties");
 		FileInputStream FI = new FileInputStream(f);
 		Repository.load(FI);
+		
 	}
 	
 	@Test
@@ -44,10 +45,14 @@ public class APIBasics3 {
 		
 		//Task 2 Grab place id from the response
 		String response= AddrawRes.asString();
+		
 		System.out.println(response);
+		
 		JsonPath js = new JsonPath(response);
 		String place = js.get("place_id");
+		
 		System.out.println(place);
+		
 		//Delete the place id
 		Response DeleterawRes =given().queryParam("key", Repository.getProperty("KEY")).
 		body(Body_Payload_Json.get_DeleteBody(place)).

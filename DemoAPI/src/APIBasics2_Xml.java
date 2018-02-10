@@ -1,13 +1,17 @@
 import static io.restassured.RestAssured.given;
 
-
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 
 import java.nio.file.Paths;
 
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import files.ModifyXMLDOM;
 import files.ReusableMethods;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -16,9 +20,23 @@ import io.restassured.response.Response;
 
 
 public class APIBasics2_Xml {
-	@Test
-	public void postData() throws IOException
+	
+	
+	@DataProvider(name = "Inputs")
+	public static Object[][] credentials() 
 	{
+		return new Object[][]
+		{ 
+	        { "name", "Good Google"}, 
+	        { "name", "Google Test"}
+	    };    
+	 
+	 }
+	
+	@Test(dataProvider = "Inputs")
+	public void postData(String Element,String Value) throws IOException
+	{
+		ModifyXMLDOM.G_placePostData(Element, Value);
 		String xmlPostdata = GenerateStringFromResource(System.getProperty("user.dir") + "//src//files//Body_Payload_XML.xml");
 		RestAssured.baseURI="https://maps.googleapis.com";
 		

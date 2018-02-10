@@ -1,10 +1,10 @@
-<PlaceAddRequest>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><PlaceAddRequest>
   <location>
     <lat>-33.8669710</lat>
     <lng>151.1958750</lng>
   </location>
   <accuracy>50</accuracy>
-  <name>Google Shoes!</name>
+  <name>Google Test</name>
   <phone_number>(02) 9374 4000</phone_number>
   <address>48 Pirrama Road, Pyrmont, NSW 2009, Australia</address>
   <type>shoe_store</type>

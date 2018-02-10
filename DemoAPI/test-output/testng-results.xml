@@ -1,29 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4618" started-at="2018-02-06T12:15:02Z" finished-at="2018-02-06T12:15:06Z">
+  <suite name="Default suite" duration-ms="5214" started-at="2018-02-09T13:54:39Z" finished-at="2018-02-09T13:54:44Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="4618" started-at="2018-02-06T12:15:02Z" finished-at="2018-02-06T12:15:06Z">
-      <class name="Twitter_GET">
-        <test-method status="PASS" signature="loadPropertiesFile()[pri:0, instance:Twitter_GET@57baeedf]" name="loadPropertiesFile" is-config="true" duration-ms="16" started-at="2018-02-06T17:45:02Z" finished-at="2018-02-06T17:45:02Z">
+    <test name="Default test" duration-ms="5214" started-at="2018-02-09T13:54:39Z" finished-at="2018-02-09T13:54:44Z">
+      <class name="APIBasics2_Xml">
+        <test-method status="PASS" signature="postData(java.lang.String, java.lang.String)[pri:0, instance:APIBasics2_Xml@685cb137]" name="postData" duration-ms="4873" started-at="2018-02-09T19:24:39Z" data-provider="Inputs" finished-at="2018-02-09T19:24:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[name]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Good Google]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loadPropertiesFile -->
-        <test-method status="PASS" signature="Create_Tweet()[pri:0, instance:Twitter_GET@57baeedf]" name="Create_Tweet" duration-ms="2897" started-at="2018-02-06T17:45:02Z" finished-at="2018-02-06T17:45:04Z">
+        </test-method> <!-- postData -->
+        <test-method status="PASS" signature="postData(java.lang.String, java.lang.String)[pri:0, instance:APIBasics2_Xml@685cb137]" name="postData" duration-ms="293" started-at="2018-02-09T19:24:44Z" data-provider="Inputs" finished-at="2018-02-09T19:24:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[name]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Google Test]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Create_Tweet -->
-        <test-method status="PASS" signature="Get_Tweets()[pri:2, instance:Twitter_GET@57baeedf]" name="Get_Tweets" duration-ms="629" started-at="2018-02-06T17:45:04Z" depends-on-methods="Twitter_GET.Create_Tweet" finished-at="2018-02-06T17:45:05Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Get_Tweets -->
-        <test-method status="PASS" signature="Delete_Tweet()[pri:3, instance:Twitter_GET@57baeedf]" name="Delete_Tweet" duration-ms="1046" started-at="2018-02-06T17:45:05Z" depends-on-methods="Twitter_GET.Get_Tweets" finished-at="2018-02-06T17:45:06Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Delete_Tweet -->
-      </class> <!-- Twitter_GET -->
+        </test-method> <!-- postData -->
+      </class> <!-- APIBasics2_Xml -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
