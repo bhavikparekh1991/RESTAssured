@@ -1,45 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="5214" started-at="2018-02-09T13:54:39Z" finished-at="2018-02-09T13:54:44Z">
+  <suite name="Default suite" duration-ms="11931" started-at="2018-02-18T15:22:17Z" finished-at="2018-02-18T15:22:29Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="5214" started-at="2018-02-09T13:54:39Z" finished-at="2018-02-09T13:54:44Z">
-      <class name="APIBasics2_Xml">
-        <test-method status="PASS" signature="postData(java.lang.String, java.lang.String)[pri:0, instance:APIBasics2_Xml@685cb137]" name="postData" duration-ms="4873" started-at="2018-02-09T19:24:39Z" data-provider="Inputs" finished-at="2018-02-09T19:24:44Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[name]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Good Google]]>
-              </value>
-            </param>
-          </params>
+    <test name="Default test" duration-ms="11931" started-at="2018-02-18T15:22:17Z" finished-at="2018-02-18T15:22:29Z">
+      <class name="testScripts.JavaScriptExecuter2">
+        <test-method status="PASS" signature="javascripttest()[pri:0, instance:testScripts.JavaScriptExecuter2@77f99a05]" name="javascripttest" duration-ms="11900" started-at="2018-02-18T20:52:17Z" finished-at="2018-02-18T20:52:29Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- postData -->
-        <test-method status="PASS" signature="postData(java.lang.String, java.lang.String)[pri:0, instance:APIBasics2_Xml@685cb137]" name="postData" duration-ms="293" started-at="2018-02-09T19:24:44Z" data-provider="Inputs" finished-at="2018-02-09T19:24:44Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[name]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Google Test]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- postData -->
-      </class> <!-- APIBasics2_Xml -->
+        </test-method> <!-- javascripttest -->
+      </class> <!-- testScripts.JavaScriptExecuter2 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

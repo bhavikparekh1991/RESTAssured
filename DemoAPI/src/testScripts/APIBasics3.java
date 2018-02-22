@@ -1,3 +1,4 @@
+package testScripts;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -7,12 +8,13 @@ import java.io.IOException;
 import java.util.Properties;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import body_Payloads.Body_Payload_Json;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import files.Resources;
-import files.Body_Payload_Json;
+import resources.Resources;
 
 public class APIBasics3 {
 	
@@ -21,7 +23,7 @@ public class APIBasics3 {
 	@BeforeTest
 	public void loadPropertiesFile() throws IOException
 	{
-		File f = new File(System.getProperty("user.dir") + "//src//files//env.properties");
+		File f = new File(System.getProperty("user.dir") + "//src//config//env.properties");
 		FileInputStream FI = new FileInputStream(f);
 		Repository.load(FI);
 		

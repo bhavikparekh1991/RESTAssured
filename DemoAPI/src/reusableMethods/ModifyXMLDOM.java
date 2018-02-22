@@ -1,4 +1,4 @@
-package files;
+package reusableMethods;
 import java.io.File;
 import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
@@ -18,7 +18,7 @@ public class ModifyXMLDOM {
 	public static void G_placePostData(String Element, String Value){
        try
        {
-    	String filePath = System.getProperty("user.dir") + "//src//files//Body_Payload_XML.xml";
+    	String filePath = System.getProperty("user.dir") + "//src//body_Payloads//Body_Payload_XML.xml";
     	File xmlFile = new File(filePath);
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docFactory.newDocumentBuilder();

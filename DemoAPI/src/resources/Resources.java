@@ -1,4 +1,4 @@
-package files;
+package resources;
 
 public class Resources {
 	public static String G_placePostData()

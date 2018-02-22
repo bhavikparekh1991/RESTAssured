@@ -3,14 +3,11 @@
 <suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="Twitter_GET">
+      <class name="testScripts.JavaScriptExecuter2">
         <methods>
-          <include name="loadPropertiesFile"/>
-          <include name="Delete_Tweet"/>
-          <include name="Get_Tweets"/>
-          <include name="Create_Tweet"/>
+          <include name="javascripttest"/>
         </methods>
-      </class> <!-- Twitter_GET -->
+      </class> <!-- testScripts.JavaScriptExecuter2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

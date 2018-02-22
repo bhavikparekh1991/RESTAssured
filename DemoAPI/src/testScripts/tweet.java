@@ -1,11 +1,12 @@
+package testScripts;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import reusableMethods.ReusableMethods;
+
 import static io.restassured.RestAssured.given;
 import org.testng.annotations.Test;
-
-import files.ReusableMethods;
 public class tweet {
 
 	String Consumer_Key = "wsiduE05VZqukp0NxRC5K3Fns";
